@@ -13,7 +13,7 @@ function Tiquetes() {
   const [paisesDestino, setPaisesDestino] = useState([]);
 
   const cargarReservas = async () => {
-    let data = await fetch("http://tiquetes-back.vercel.app/v1/tiquetes/listar-reservas")
+    let data = await fetch("https://tiquetes-back.vercel.app/v1/tiquetes/listar-reservas")
       .then((data) => data.json())
       .then((res) => res);
     console.log(data);
@@ -28,7 +28,7 @@ function Tiquetes() {
       fecha: fecha,
     };
 
-    fetch("http://tiquetes-back.vercel.app/v1/tiquetes/guardar-reservas", {
+    fetch("https://tiquetes-back.vercel.app/v1/tiquetes/guardar-reservas", {
       method: "POST",
       body: JSON.stringify(datosReservas),
       headers: {
@@ -73,7 +73,7 @@ function Tiquetes() {
     }
 
     console.log(event.target.value);
-    fetch("http://tiquetes-back.vercel.app/v1/tiquetes/buscar-paises", {
+    fetch("https://tiquetes-back.vercel.app/v1/tiquetes/buscar-paises", {
       method: "POST",
       body: JSON.stringify({ buscar: value }),
       headers: {
@@ -98,7 +98,7 @@ function Tiquetes() {
       return;
     }
     console.log(event.target.value);
-    fetch("http://tiquetes-back.vercel.app/v1/tiquetes/buscar-paises", {
+    fetch("https://tiquetes-back.vercel.app/v1/tiquetes/buscar-paises", {
       method: "POST",
       body: JSON.stringify({ buscar: value }),
       headers: {
